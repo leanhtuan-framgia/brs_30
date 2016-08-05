@@ -26,6 +26,10 @@ class User < ApplicationRecord
 
   enum gender: {male: 0, female: 1}
 
+  def current_user? user
+    self == user
+  end
+
   private
   def downcase_email
     self.email = email.downcase

@@ -5,6 +5,7 @@ en:
     home: "Home"
     help: "Help"
     logo: "BookReview"
+    users: "Users"
 
   footer:
     about: "About"
@@ -23,10 +24,10 @@ en:
   login:
     login: "Log in"
     profile: "Profile"
-    account: "Account"
     setting: "Setting"
     users: "Users"
     logout: "Log out"
+    error: "Please log in"
 
   user:
     gender:
@@ -39,7 +40,14 @@ en:
 
   btn:
     signup: "Create my account"
+    login: "Login"
+    new_user: "New user?"
 
   flash:
     signup_success: "Successful!"
     signup_fail: "Fail!"
+    login_fail: "Invalid email/password combination"
+
+  login:
+    title: "Log in"
+    h1: "Log in"
