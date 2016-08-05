@@ -14,3 +14,32 @@ en:
   center_jumbotron:
     signup: "Sign up now!"
     welcome: "Welcome to the BookRerview App"
+
+  signup:
+    title: "Register"
+    h1: "Register"
+    password_confirmation: "Confirmation"
+
+  login:
+    login: "Log in"
+    profile: "Profile"
+    account: "Account"
+    setting: "Setting"
+    users: "Users"
+    logout: "Log out"
+
+  user:
+    gender:
+      male: "male"
+      female: "female"
+
+  message:
+    error: "The form contains"
+    name_error: "error"
+
+  btn:
+    signup: "Create my account"
+
+  flash:
+    signup_success: "Successful!"
+    signup_fail: "Fail!"
