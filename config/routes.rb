@@ -14,5 +14,5 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :books, only: :index
+  resources :books
 end

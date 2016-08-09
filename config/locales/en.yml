@@ -1,12 +1,13 @@
 en:
   hello: "Hello world"
-
+  hello_admin: "Hello admin"
   header:
     home: "Home"
     help: "Help"
     logo: "BookReview"
     users: "Users"
     books: "Books"
+
 
   footer:
     about: "About"
@@ -44,14 +45,30 @@ en:
     login: "Login"
     new_user: "New user?"
 
+    submit: "Submit"
+
   flash:
     signup_success: "Successful!"
     signup_fail: "Fail!"
     login_fail: "Invalid email/password combination"
+    delete_book_success: "Delete Book Successful"
+    delete_book_failed: "Something wrong! Please try again later"
+    add_book_success: "Add Book Successful!"
+    edit_book_success: "Edit Book Successful"
+    edit_book_failed: "Something wrong! Please try again later"
+
 
   login:
     title: "Log in"
     h1: "Log in"
+
+
+  admin_method:
+    add_book: "Add Book"
+    edit_book: "Edit Book"
+    delete_book: "Delete Book"
+    search_book: "Search Book"
+    see_book_list: "See book list"
 
   books:
     title: "All book"

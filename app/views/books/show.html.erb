@@ -1,0 +1,22 @@
+<% provide :title, @book.title %>
+<div class="book">
+    <div class="row thumbnail abox">
+      <div class="col-md-6 img-responsive">
+        <%= image_tag @book.picture, class: "img-responsive" %>
+      </div>
+      <div class="col-md-6 text-center">
+        <p><b><%= @book.title %></b></p>
+        <p><%= @book.category.name %></p>
+        <p><%= @book.author %></p>
+        <p><%= @book.publish_date %></p>
+        <p><%= @book.number_of_page %></p>
+        <p><%= @book.avg_rate %></p>
+        <% if current_user.is_admin? %>
+          <p><%= link_to t("admin_method.edit_book"), edit_book_path(@book) %></p>
+          <p><%= link_to t("admin_method.delete_book"), @book, method: :delete,
+            data: {confirm: "You sure?"} %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

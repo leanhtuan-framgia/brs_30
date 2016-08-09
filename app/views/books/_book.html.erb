@@ -11,7 +11,7 @@
         <p><%= book.publish_date %></p>
         <p><%= book.number_of_page %></p>
         <p><%= book.avg_rate %></p>
-        <%= link_to t("book.detail"), "#" %>
+        <%= link_to t("book.detail"), book_path(book) %>
       </div>
     </div>
   </div>
