@@ -1,4 +1,17 @@
-<% unless logged_in? %>
+<% if logged_in? && current_user.is_admin? %>
+  <div class="row">
+    <h1><%= t "hello_admin" %></h1>
+  <aside class="col-md-4">
+    <section>
+      <%= link_to t("admin_method.add_book"), new_admin_book_path,
+        class: "btn btn-md btn-link" %>
+    </section>
+    <section>
+      <%= link_to t("admin_method.see_book_list"), admin_books_path,
+        class: "btn btn-md btn-link" %>
+    </section>
+  </div>
+<% else %>
   <div class="center jumbotron">
     <h1><%= t "center_jumbotron.welcome" %></h1>
     <%= link_to t("center_jumbotron.signup"), signup_path,
