@@ -6,6 +6,7 @@ en:
     help: "Help"
     logo: "BookReview"
     users: "Users"
+    books: "Books"
 
   footer:
     about: "About"
@@ -51,3 +52,8 @@ en:
   login:
     title: "Log in"
     h1: "Log in"
+
+  books:
+    title: "All book"
+    detail: "Detail"
+    h1: "All books"
