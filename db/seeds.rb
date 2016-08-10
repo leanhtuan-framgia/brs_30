@@ -18,3 +18,15 @@ Category.create! name: "Long story"
   Book.create! title: title, picture: picture, publish_date: publish_date,
     author: author, number_of_page: number_of_page, category_id: category_id
 end
+
+User.create! name: "Linh", email: "linh@framgia.com",
+  phone_number: "1111111111", gender: "female", password: "111111",
+  password_confirmation: "111111", is_admin: true
+
+25.times do |n|
+  name = "ABC#{n}"
+  email = "example-#{n+1}@railstutorial.org"
+  password = "password"
+  User.create! name: name, email: email, phone_number: "1111111111",
+    gender: "male", password: password, password_confirmation: password
+end
