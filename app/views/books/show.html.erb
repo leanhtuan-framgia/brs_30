@@ -1,0 +1,17 @@
+<% provide :title, @book.title %>
+<div class="book">
+  <div class="row thumbnail abox">
+    <div class="col-md-6 img-responsive">
+      <%= image_tag @book.picture, size: Settings.picture_size,
+        class: "img-responsive" %>
+    </div>
+    <div class="col-md-6 text-center">
+      <p><b><%= @book.title %></b></p>
+      <p><%= @book.category.name %></p>
+      <p><%= @book.author %></p>
+      <p><%= @book.publish_date %></p>
+      <p><%= @book.number_of_page %></p>
+      <p><%= @book.avg_rate %></p>
+    </div>
+  </div>
+</div>

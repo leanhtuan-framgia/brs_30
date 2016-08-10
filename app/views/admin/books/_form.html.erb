@@ -1,0 +1,23 @@
+<%= form_for [:admin, @book] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.label :title %>
+  <%= f.text_field :title, class: "form-control" %>
+
+  <%= f.label :author %>
+  <%= f.text_field :author, class: "form-control" %>
+
+  <%= f.label :publish_date %>
+  <%= f.date_field :publish_date, class: "form-control" %>
+
+  <%= f.label :picture_url %>
+  <%= f.text_field :picture, class: "form-control" %>
+
+  <%= f.label :number_of_page %>
+  <%= f.text_field :number_of_page, class: "form-control" %>
+
+  <%= f.label :category %>
+  <%= f.select :category_id, options_for_select(@category_selects),
+    class: "form-control" %><br/>
+
+  <%= f.submit t("btn.submit"), class: "btn btn-primary" %>
+<% end %>
