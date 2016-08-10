@@ -11,5 +11,9 @@ class BooksController < ApplicationController
   private
   def find_book
     @book = Book.find_by id: params[:id]
+    if @book.nil?
+      flash[:danger] = t "flash.cant_find_book"
+      redirect_to books_path
+    end
   end
 end

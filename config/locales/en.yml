@@ -1,6 +1,9 @@
 en:
   hello: "Hello world"
   hello_admin: "Hello admin"
+  activity_timeline: "Activity Timeline"
+  alert_not_admin: "You don't have permission to access this page!"
+
   header:
     home: "Home"
     help: "Help"
@@ -30,6 +33,8 @@ en:
     users: "Users"
     logout: "Log out"
     error: "Please log in"
+    title: "Log in"
+    h1: "Log in"
 
   user:
     gender:
@@ -61,15 +66,13 @@ en:
     delete_book_failed: "Something wrong! Please try again later"
     add_book_success: "Add Book Successful!"
     edit_book_success: "Edit Book Successful"
+
     edit_book_failed: "Something wrong! Please try again later"
     delete_user: "User deleted"
     user_nil: "User nil"
     user_no: "User no"
 
-  login:
-    title: "Log in"
-    h1: "Log in"
-
+    cant_find_book: "This book is no longer exit"
 
   admin_method:
     add_book: "Add Book"
