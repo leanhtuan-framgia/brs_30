@@ -35,6 +35,12 @@ en:
     gender:
       male: "male"
       female: "female"
+    title: "All users"
+    delete: "Delete"
+    admin:
+      delete: "Delete"
+      edit: "Edit"
+      dialog: "You sure?"
 
   message:
     error: "The form contains"
@@ -56,7 +62,9 @@ en:
     add_book_success: "Add Book Successful!"
     edit_book_success: "Edit Book Successful"
     edit_book_failed: "Something wrong! Please try again later"
-
+    delete_user: "User deleted"
+    user_nil: "User nil"
+    user_no: "User no"
 
   login:
     title: "Log in"
