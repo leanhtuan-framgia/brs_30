@@ -1,0 +1,13 @@
+<% @user ||= current_user %>
+<div class="stats">
+  <% Settings.relation.each do |key, relation| %>
+    <%= link_to relationships_path user_id: @user, action_type: relation do %>
+      <div class="hvr-glow col-md-5">
+        <strong id=<%= relation %> class="stat">
+          <%= @user.send(relation).count %>
+        </strong>
+        <p><%= t relation %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>

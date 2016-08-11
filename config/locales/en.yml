@@ -46,6 +46,13 @@ en:
       delete: "Delete"
       edit: "Edit"
       dialog: "You sure?"
+    follow: "Follow"
+    unfollow: "Unfollow"
+    user_nil: "User nil"
+    stats:
+      following: "Following"
+      followers: "Follower"
+    relationship: "Relationships"
 
   message:
     error: "The form contains"
@@ -73,6 +80,7 @@ en:
     user_no: "User no"
 
     cant_find_book: "This book is no longer exit"
+    cant_find_relationship: "Relationships not found"
 
   admin_method:
     add_book: "Add Book"
@@ -88,3 +96,6 @@ en:
 
   confirm:
     delete_book: "Are you sure you want to delete this book ?"
+
+  activity:
+    time: "ago."
