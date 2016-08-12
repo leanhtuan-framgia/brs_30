@@ -1,7 +1,7 @@
 class Book < ApplicationRecord
   belongs_to :category
 
-  has_many :userbooks, dependent: :destroy
+  has_many :user_books, dependent: :destroy
   has_many :reviews
 
   validates :title, presence: true, length: {maximum: 100}
