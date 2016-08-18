@@ -1,7 +1,7 @@
 class CreateRequests < ActiveRecord::Migration[5.0]
   def change
     create_table :requests do |t|
-      t.string :request_book_name
+      t.string :name
       t.string :author
       t.date :publish_date
       t.string :description

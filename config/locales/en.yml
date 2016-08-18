@@ -10,7 +10,7 @@ en:
     logo: "BookReview"
     users: "Users"
     books: "Books"
-
+    requests: "Requests"
 
   footer:
     about: "About"
@@ -53,6 +53,9 @@ en:
       following: "Following"
       followers: "Follower"
     relationship: "Relationships"
+    request: "All requests"
+    btn_request: "Send request"
+    new_request: "New request"
 
   message:
     error: "The form contains"
@@ -73,6 +76,7 @@ en:
     delete_book_failed: "Something wrong! Please try again later"
     add_book_success: "Add Book Successful!"
     edit_book_success: "Edit Book Successful"
+    send_request_success: "Send Request Successful"
 
     edit_book_failed: "Something wrong! Please try again later"
     delete_user: "User deleted"
@@ -99,3 +103,6 @@ en:
 
   activity:
     time: "ago."
+
+  errors:
+    publish_date: "must be in the past"
