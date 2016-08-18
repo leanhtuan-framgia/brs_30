@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :users, except: [:edit, :update, :destroy]
   resources :books, only: [:index, :show]
   resources :requests, except: [:show, :update, :edit]
+  resources :user_books, only: [:create, :update]
   root "static_pages#home"
 
   resources :relationships, only: [:create, :destroy, :index]
