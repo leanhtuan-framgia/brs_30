@@ -2,4 +2,26 @@
 <h1><%= t "user.request" %></h1>
 <div class="row">
   <%= link_to t("user.btn_request"), new_request_path %>
+
+  <div class="row requests">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= t "table.request.book_name" %></th>
+          <th><%= t "table.request.author" %></th>
+          <th><%= t "table.request.publish_date" %></th>
+          <th><%= t "table.request.description" %></th>
+          <th><%= t "table.request.request_status" %></th>
+          <th><%= t "table.request.cancel" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @requests %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row text-center">
+    <%= will_paginate %>
+  </div>
 </div>

@@ -6,6 +6,8 @@ class Request < ApplicationRecord
   validates :publish_date, presence: true
   validate :validates_publish_date_compare_now
 
+  enum req_status: [:pendding, :accept, :reject]
+
   private
   def validates_publish_date_compare_now
     errors.add :publish_date, I18n.t("errors.publish_date") if
