@@ -2,6 +2,7 @@ class RequestsController < ApplicationController
   before_action :logged_in_user, only: [:index, :new, :create]
 
   def index
+    @requests = Request.paginate page: params[:page], per_page: Settings.size
   end
 
   def new
@@ -12,7 +13,7 @@ class RequestsController < ApplicationController
     @request = current_user.requests.build request_params
     if @request.save
       flash[:success] = t "flash.send_request_success"
-      redirect_to root_url
+      redirect_to requests_url
     else
       render :new
     end

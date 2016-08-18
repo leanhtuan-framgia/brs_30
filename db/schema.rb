@@ -70,10 +70,10 @@ ActiveRecord::Schema.define(version: 20160804180155) do
     t.string   "author"
     t.date     "publish_date"
     t.string   "description"
-    t.string   "req_status"
+    t.integer  "req_status",   default: 0
     t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
 

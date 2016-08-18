@@ -5,7 +5,7 @@ class CreateRequests < ActiveRecord::Migration[5.0]
       t.string :author
       t.date :publish_date
       t.string :description
-      t.string :req_status
+      t.integer :req_status, default: 0
       t.references :user, index: true, foreign_key: true
 
       t.timestamps
