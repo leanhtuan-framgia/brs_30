@@ -4,5 +4,6 @@
   <th><%= request.publish_date %></th>
   <th><%= request.description %></th>
   <th><%= request.req_status %></th>
-  <th><%= link_to t("user.btn_cancel_request"), "#" %></th>
+  <th><%= link_to t("user.btn_cancel_request"), request, method: :delete,
+    data: {confirm: t("confirm.cancel_request")}, class: "btn" %></th>
 </tr>
