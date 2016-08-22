@@ -1,6 +1,4 @@
 class Admin::BooksController < Admin::BaseController
-  before_action :logged_in_user
-  before_action :verify_admin
   before_action :load_categories, only: [:new, :edit]
   before_action :find_book, except: [:index, :new, :create]
 

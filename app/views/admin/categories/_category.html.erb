@@ -1,0 +1,11 @@
+<div class="text-center">
+  <h3><%= category.name %></h3>
+  <p><%= category.description %></p>
+  <%= link_to edit_admin_category_path(category) do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+  <% end %>
+  <%= link_to [:admin, category], method: :delete,
+    data: {confirm: t("confirm.delete_category")} do %>
+    <span class="glyphicon glyphicon-trash text-danger"></span>
+  <% end %>
+</div>
