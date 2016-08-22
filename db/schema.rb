@@ -27,10 +27,11 @@ ActiveRecord::Schema.define(version: 20160804180155) do
     t.date     "publish_date"
     t.string   "author"
     t.integer  "number_of_page"
-    t.integer  "avg_rate"
+    t.integer  "avg_rate",          default: 0
+    t.integer  "quantity_favorite", default: 0
     t.integer  "category_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.index ["category_id"], name: "index_books_on_category_id"
   end
 

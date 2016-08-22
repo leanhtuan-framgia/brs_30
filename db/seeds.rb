@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Category.create! name: "Long story"
+Category.create! name: "Tham khao"
 
 30.times do |n|
   title = "Toi thay hoa vang tren co xanh"
@@ -15,8 +16,10 @@ Category.create! name: "Long story"
   author = "Nguyen Nhat Anh"
   number_of_page = 150
   category_id = 1
+  quantity_favorite = 0
   Book.create! title: title, picture: picture, publish_date: publish_date,
-    author: author, number_of_page: number_of_page, category_id: category_id
+    author: author, number_of_page: number_of_page, category_id: category_id,
+    quantity_favorite: quantity_favorite
 end
 
 User.create! name: "Linh", email: "linh@framgia.com",
@@ -29,4 +32,17 @@ User.create! name: "Linh", email: "linh@framgia.com",
   password = "password"
   User.create! name: name, email: email, phone_number: "1111111111",
     gender: "male", password: password, password_confirmation: password
+end
+
+5.times do |n|
+  title = "1001 cach lam giau"
+  picture = "http://bookbuy.vn/Res/Images/Product/1001-cach-lam-giau_31813_1.png"
+  publish_date = "10/12/2010"
+  author = "Quoc Khanh - Thu Minh"
+  number_of_page = 150
+  category_id = 2
+  avg_rate = 5
+  Book.create! title: title, picture: picture, publish_date: publish_date,
+    author: author, number_of_page: number_of_page, category_id: category_id,
+    avg_rate: avg_rate
 end

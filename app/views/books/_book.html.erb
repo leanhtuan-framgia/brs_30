@@ -3,7 +3,7 @@
     <div class="row thumbnail abox">
       <div class="col-md-6 img-responsive">
         <%= link_to image_tag(book.picture, alt: book.title), book,
-          size: Settings.picture_size, class: "img-responsive" %>
+          size: Settings.picture_size, class: "img-responsive image-book" %>
       </div>
       <div class="col-md-6 text-center">
         <p><b><%= link_to book.title, book %></b></p>
@@ -11,7 +11,14 @@
         <p><%= book.author %></p>
         <p><%= book.publish_date %></p>
         <p><%= book.number_of_page %></p>
-        <p><%= book.avg_rate %></p>
+        <p>
+          <%= t "book.rate" %>
+          <%= book.avg_rate %>
+        </p>
+        <p>
+          <%= t "book.favorite" %>
+          <%= book.quantity_favorite %>
+        </p>
       </div>
     </div>
   </div>
