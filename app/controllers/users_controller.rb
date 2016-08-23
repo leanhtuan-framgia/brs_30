@@ -27,6 +27,7 @@ class UsersController < ApplicationController
       per_page: Settings.size
     @books_favorite = Book.get_book_favorite(@user.id)
       .paginate page: params[:page], per_page: Settings.size
+    @user_books = UserBook.get_reading_history @user.id
     @relationship = if current_user.following? @user
       current_user.active_relationships.find_by followed_id: @user.id
     else

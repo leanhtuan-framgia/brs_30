@@ -57,6 +57,7 @@ en:
     btn_request: "Send request"
     new_request: "New request"
     btn_cancel_request: "Cancel"
+    reading_history: "Reading History"
 
   message:
     error: "The form contains"
@@ -128,7 +129,6 @@ en:
     filter_book: "Filter book"
     no_favorite: "There is no book yet"
 
-
   categories:
     title: "All Category"
     h1: "All Category"
@@ -166,7 +166,6 @@ en:
     write_review: "Write review"
     favorite: "Favorite"
     see_favorite: " Click to see Favorite Books List"
-
 
   review:
     title_write: "Write review"

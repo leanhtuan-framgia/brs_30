@@ -1,0 +1,6 @@
+<p>
+  <%= link_to user_book.user.name, user_path(user_book.user) %>
+  <%= user_book.read_status %>
+  <%= link_to user_book.book.title, book_path(user_book.book) %>
+  <%= time_ago_in_words user_book.created_at %>
+</p>
