@@ -1,0 +1,30 @@
+<div class="row title text-center">
+  <h1><b><%= @book.title %></b></h1>
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-md-8 col-md-ofset-2">
+    <h4>
+      <%= t "book.category" %> &nbsp
+      <b><%= @book.category.name %><b>
+    </h4>
+    <h4>
+      <%= t "book.author" %> &nbsp
+      <b><%= @book.author %></b>
+    </h4>
+    <h4>
+      <%= t "book.publish_date" %> &nbsp
+      <b><%= @book.publish_date %></b>
+    </h4>
+    <h4>
+      <%= t "book.number_page" %> &nbsp
+      <b><%= @book.number_of_page %></b>
+    </h4>
+    <h4>
+      <%= t "book.rate" %> &nbsp
+      <b><%= @book.avg_rate %></b>
+    </h4>
+    <h4><%= t "books.mark" %></h4>
+  </div>
+</div>

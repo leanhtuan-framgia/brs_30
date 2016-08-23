@@ -69,7 +69,9 @@ en:
     edit: "Edit"
     update: "Update"
     delete: "Delete"
+    favorite: "Favorite"
     submit: "Submit"
+    unfavorite: "Unfavorite"
 
   flash:
     signup_success: "Successful!"
@@ -96,6 +98,9 @@ en:
     cant_cancel_request: "Can't cancel request!"
     cant_find_category: "This category is no longer exit"
     cancel_success: "Cancel successful!"
+    cant_create_request_status: "Can't create request status!"
+    mark_book_success: "Mark book successful!"
+    cant_find_userbook: "UserBook not found!"
 
   admin_method:
     add_book: "Add Book"
@@ -110,8 +115,8 @@ en:
 
   books:
     title: "All book"
-    detail: "Detail"
     h1: "All books"
+    mark: "Mark book"
 
   categories:
     title: "All Category"
@@ -136,3 +141,10 @@ en:
       description: "Description"
       request_status: "Request status"
       cancel: "Cancel"
+
+  book:
+    category: "Category :"
+    author: "Author :"
+    publish_date: "Publish date :"
+    number_page: "Number page :"
+    rate: "Rate :"

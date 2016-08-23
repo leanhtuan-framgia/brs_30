@@ -1,0 +1,24 @@
+<%= form_for @user_book, remote: true do |f| %>
+  <div id="btn-radio">
+    <% @read_statuses.each do |status, value| %>
+      <%= f.hidden_field :book_id, value: @user_book.book_id %>
+      <div class="col-xs-1 btn-radio">
+        <%= f.radio_button :read_status, status,
+          checked: (@checked_status == status) ? true : false %>
+      </div>
+      <div class="col-xs-2 label-radio">
+        <b><%= f.label status %><b>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<%= form_for @user_book do |f| %>
+  <div class="col-xs-3">
+    <%= f.hidden_field :book_id, value: @user_book.book_id %>
+    <%= f.hidden_field :favorite, value: !@user_book.favorite %>
+    <%= f.submit t("btn.#{@user_book.favorite ? "unfavorite" : "favorite"}"),
+      class: "#{favorite_status @user_book}",
+      id: "btn-favorite" %>
+  </div>
+<% end %>

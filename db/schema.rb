@@ -89,13 +89,13 @@ ActiveRecord::Schema.define(version: 20160804180155) do
   end
 
   create_table "user_books", force: :cascade do |t|
-    t.boolean  "favorite"
-    t.string   "read_status"
+    t.boolean  "favorite",    default: false
+    t.integer  "read_status", default: 0
     t.integer  "rate"
     t.integer  "user_id"
     t.integer  "book_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.index ["book_id"], name: "index_user_books_on_book_id"
     t.index ["user_id"], name: "index_user_books_on_user_id"
   end

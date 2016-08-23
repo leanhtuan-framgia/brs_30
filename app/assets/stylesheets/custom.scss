@@ -5,6 +5,7 @@
 
 body {
   padding-top: 60px;
+  background: #f7f4b7;
 }
 
 section {
@@ -33,12 +34,11 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #777;
+  color: black;
 }
 
 p {
@@ -66,8 +66,9 @@ p {
 
 /* footer */
 
+
 footer {
-  margin-top: 45px;
+  bottom: 0px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
@@ -189,4 +190,53 @@ span.picture {
   input {
     border: 0;
   }
+}
+
+/* show book */
+.abox {
+  margin-top: 50px;
+}
+
+.abox h4 {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.abox .btn-radio {
+  float: left;
+}
+
+.abox .product-img {
+  margin: 0px auto
+}
+
+.abox .row {
+  margin: 0px ;
+}
+
+.abox .radio {
+  margin-top: 20px;
+}
+
+.abox #btn-favorite {
+  margin-top: -8px;
+}
+
+.abox .radio label, .checkbox label {
+  padding-left: 0px;
+}
+
+.abox .radio input[type="radio"],
+.abox .radio-inline input[type="radio"],
+.abox .checkbox input[type="checkbox"],
+.abox .checkbox-inline input[type="checkbox"] {
+  position: absolute;
+  margin-left: 0px;
+  margin-top: 4px \9;
+}
+
+.unfavorite {
+  background-color: #ccc;
+  border-color: #ccc;
 }
