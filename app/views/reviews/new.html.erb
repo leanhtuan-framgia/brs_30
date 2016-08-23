@@ -1,0 +1,15 @@
+<% provide :title, t("review.title_write") %>
+<h1><%= t "review.new" %></h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @review do |f| %>
+      <%= f.hidden_field :book_id, value: @book.id %>
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control" %>
+      <%= f.label :content %>
+      <%= f.text_area :content, class: "field" %>
+      <%= f.submit t("btn.btn_submit_review"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

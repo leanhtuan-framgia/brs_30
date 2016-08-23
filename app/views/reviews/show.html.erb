@@ -1,0 +1,15 @@
+<% provide :title, t("review.new") %>
+<h1><%= @review.title %></h1>
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="img-book">
+      <%= link_to image_tag(@review.book.picture, alt: @review.book.title),
+        @review.book, size: Settings.picture_size, class: "img-responsive" %>
+      <b><%= @review.book.title %></b>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <%= simple_format @review.content %>
+  </div>
+</div>
