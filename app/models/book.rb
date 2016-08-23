@@ -4,6 +4,10 @@ class Book < ApplicationRecord
   has_many :user_books, dependent: :destroy
   has_many :reviews
 
+  scope :get_book_favorite,
+    -> user_id{where("id IN (SELECT book_id FROM user_books WHERE
+    user_id = ? AND favorite = ?)", user_id, true)}
+
   validates :title, presence: true, length: {maximum: 100}
   validates :author, presence: true
   validates :picture, presence: true
