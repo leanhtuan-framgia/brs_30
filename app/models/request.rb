@@ -8,6 +8,8 @@ class Request < ApplicationRecord
 
   enum req_status: [:pendding, :accept, :reject]
 
+  scope :order_by_time, -> {order created_at: :desc}
+
   private
   def validates_publish_date_compare_now
     errors.add :publish_date, I18n.t("errors.publish_date") if

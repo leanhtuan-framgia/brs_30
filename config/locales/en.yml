@@ -87,7 +87,7 @@ en:
     edit_category_success: "Edit Category Successful"
     add_category_success: "Add Category Successful"
     delete_category_success: "Delete Category Successful"
-
+    handle_request_success: "Handle Request Successful"
 
     delete_user: "User deleted"
     user_nil: "User nil"
@@ -145,6 +145,8 @@ en:
       description: "Description"
       request_status: "Request status"
       cancel: "Cancel"
+      contributor: "Contributor"
+      handle: "Handle"
 
   book:
     category: "Category :"
@@ -157,3 +159,9 @@ en:
   review:
     title_write: "Write review"
     new: "Review"
+
+  request:
+    title: "Request Details:"
+    name: "Request Name:"
+    description: "Description:"
+    status: "Status"

@@ -1,0 +1,10 @@
+<tr>
+  <th><%= request.user.name %></th>
+  <th><%= request.name %></th>
+  <th><%= request.author %></th>
+  <th><%= request.publish_date %></th>
+  <th><%= request.description %></th>
+  <th><%= request.req_status %></th>
+  <th><%= link_to t("table.request.handle"),
+    edit_admin_request_path(request) %></th>
+</tr>
