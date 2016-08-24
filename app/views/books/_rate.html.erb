@@ -1,0 +1,43 @@
+<fieldset class="rating">
+  <%= form_for @user_book, remote: true do |f| %>
+    <%= f.radio_button :rate, id: "star5", name: "rating", value: "5",
+      class: "star_rate_input" %>
+    <%= f.label :"Awesome-10 stars", for: "star5", class: "star_rate_label full" %>
+
+    <%= f.radio_button :rate, id: "star4half", name: "rating",
+      value: "4 and a half", class: "star_rate_input" %>
+    <%= f.label :"Pretty good-9 stars", class: "star_rate_label half", for: "star4half" %>
+
+    <%= f.radio_button :rate, id: "star4", name: "rating", value: "4",
+      class: "star_rate_input" %>
+    <%= f.label :"Pretty good - 8 stars", class: "star_rate_label full", for: "star4" %>
+
+    <%= f.radio_button :rate, id: "star3half", name: "rating",
+      value: "3 and a half", class: "star_rate_input" %>
+    <%= f.label :"Meh-7 stars", class: "star_rate_label half", for: "star3half" %>
+
+    <%= f.radio_button :rate, id: "star3", name: "rating",
+      value: "3", class: "star_rate_input" %>
+    <%= f.label :"Meh - 6 stars", class: "star_rate_label full", for: "star3" %>
+
+    <%= f.radio_button :rate, id: "star2half", name: "rating",
+      value: "2 and a half", class: "star_rate_input" %>
+    <%= f.label :"Kinda bad-5 stars", class: "star_rate_label half", for: "star2half" %>
+
+    <%= f.radio_button :rate, id: "star2", name: "rating",
+      value: "2", class: "star_rate_input" %>
+    <%= f.label :"Kinda bad - 4 stars", class: "star_rate_label full", for: "star2" %>
+
+    <%= f.radio_button :rate, id: "star1half", name: "rating",
+      value: "1 and a half", class: "star_rate_input" %>
+    <%= f.label :"Meh-3 stars", class: "star_rate_label half", for: "star1half" %>
+
+    <%= f.radio_button :rate, id: "star1", name: "rating", value: "1",
+      class: "star_rate_input" %>
+    <%= f.label :"Sucks big time-2 star", class: "star_rate_label full", for: "star1" %>
+
+    <%= f.radio_button :rate, id: "starhalf", name: "rating",
+      value: "label half", class: "star_rate_input" %>
+    <%= f.label :"Sucks big time-1 stars", class: " label half", for: "starhalf" %>
+  <% end %>
+</fieldset>
