@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+fieldset, .star_rate_label {margin: 0; padding: 0;}
+body{margin: 20px;}
+h1 {font-size: 1.5em; margin: 10px;}
+
+/****** Style Star Rating Widget *****/
+
+.rating {
+  border: none;
+  float: right;
+}
+
+.rating > .star_rate_input {display: none;}
+.rating > .star_rate_label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before {
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > .star_rate_label {
+  color: #ddd;
+ float: right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > .star_rate_input:checked ~ .star_rate_label, /* show gold star when clicked */
+.rating:not(:checked) > .star_rate_label:hover, /* hover current star */
+.rating:not(:checked) > .star_rate_label:hover ~ .star_rate_label {color: #FFD700;} /* hover previous stars in list */
+
+.rating > .star_rate_input:checked + .star_rate_label:hover, /* hover current star when changing rating */
+.rating > .star_rate_input:checked ~ .star_rate_label:hover,
+.rating > .star_rate_label:hover ~ .star_rate_input:checked ~ .star_rate_label, /* lighten current selection */
+.rating > .star_rate_input:checked ~ .star_rate_label:hover ~ .star_rate_label {color: #FFED85;}
