@@ -89,6 +89,9 @@ en:
     add_category_success: "Add Category Successful"
     delete_category_success: "Delete Category Successful"
     handle_request_success: "Handle Request Successful"
+    edit_review_success: "Edit review successful!"
+    delete_review_success: "Delete review successful!"
+    delete_review_error: "Delete review error!"
 
     delete_user: "User deleted"
     user_nil: "User nil"
@@ -133,6 +136,7 @@ en:
     delete_book: "Are you sure you want to delete this book ?"
     cancel_request: "Are you sure you want to cancel this request ?"
     delete_category: "Are you sure you want to delete this category?"
+    delete_review: "Are you sure you want to delete this review?"
 
   activity:
     time: "ago."
@@ -163,6 +167,7 @@ en:
   review:
     title_write: "Write review"
     new: "Review"
+    edit: "Edit Review"
 
   request:
     title: "Request Details:"

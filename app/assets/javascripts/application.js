@@ -16,7 +16,7 @@
 //= require bootstrap
 //= require_tree .
 
-$(document).ready(function(){
+$(document).on("turbolinks:load", function(){
   $("#btn-radio input").change(function(){
     $(this.form).submit();
   });

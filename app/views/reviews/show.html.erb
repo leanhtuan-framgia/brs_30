@@ -12,4 +12,7 @@
   <div class="col-md-8">
     <%= simple_format @review.content %>
   </div>
+  <%= link_to t("btn.edit"), edit_review_path, class: "btn btn-primary" %>
+  <%= link_to t("btn.delete"), @review, method: :delete,
+    data: {confirm: t("confirm.delete_review")}, class: "btn btn-primary" %>
 </div>
