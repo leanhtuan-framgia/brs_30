@@ -72,6 +72,7 @@ en:
     favorite: "Favorite"
     submit: "Submit"
     unfavorite: "Unfavorite"
+    btn_submit_review: "Submit review"
 
   flash:
     signup_success: "Successful!"
@@ -101,6 +102,9 @@ en:
     cant_create_request_status: "Can't create request status!"
     mark_book_success: "Mark book successful!"
     cant_find_userbook: "UserBook not found!"
+    write_review_success: "Write review successful!"
+    cant_find_book_to_review: "Can't find book to review!"
+    cant_find_review: "Review not found!"
 
   admin_method:
     add_book: "Add Book"
@@ -148,3 +152,8 @@ en:
     publish_date: "Publish date :"
     number_page: "Number page :"
     rate: "Rate :"
+    write_review: "Write review"
+
+  review:
+    title_write: "Write review"
+    new: "Review"
