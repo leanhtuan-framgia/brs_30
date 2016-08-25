@@ -43,6 +43,12 @@ class User < ApplicationRecord
     following.include? other_user
   end
 
+  def feeds
+    user_ids = self.following.map &:id
+    user_ids << id
+    Activity.user_activity user_ids
+  end
+
   private
   def downcase_email
     self.email = email.downcase

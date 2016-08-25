@@ -14,10 +14,10 @@ class UserBook < ApplicationRecord
       activity_build_create read_status, book_id, user_id
     elsif favorite_changed?
       if favorite
-        activity_build_create "Favorite", book_id, user_id
+        activity_build_create "favorite", book_id, user_id
         self.book.quantity_favorite += 1
       else
-        activity_build_create "Unfavorite", book_id, user_id
+        activity_build_create "unfavorite", book_id, user_id
         self.book.quantity_favorite -= 1
       end
       self.book.save
