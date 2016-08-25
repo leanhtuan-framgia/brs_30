@@ -172,6 +172,8 @@ en:
     title_write: "Write review"
     new: "Review"
     edit: "Edit Review"
+    write: "Write"
+    ago: "ago."
 
   request:
     title: "Request Details:"

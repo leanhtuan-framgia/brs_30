@@ -21,6 +21,8 @@ class BooksController < ApplicationController
     @user_book = current_user.user_books.find_by book_id: @book.id
     @user_book ||= @book.user_books.new
     @checked_status = @user_book.read_status
+    @reviews = @book.reviews.paginate page: params[:page],
+      per_page: Settings.size
   end
 
   private
