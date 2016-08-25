@@ -307,5 +307,12 @@ span.picture {
     float: left;
     margin-right: 10px;
     margin-top: 5px;
+
+.reviews {
+  list-style: none;
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-bottom: 10px;
   }
 }

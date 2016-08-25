@@ -1,0 +1,9 @@
+<span class="content">
+  <%= link_to review.title, review %>
+</span>
+<span class="timestamp">
+  <%= t "review.write" %>
+  <%= time_ago_in_words review.created_at %>
+  <%= t "review.ago" %>
+</span>
+<br>

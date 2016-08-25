@@ -1,0 +1,8 @@
+<% if @reviews.any? %>
+  <ol class="reviews">
+    <%= render @reviews %>
+  </ol>
+  <div class="row text-center">
+    <%= will_paginate @reviews %>
+  </div>
+<% end %>
