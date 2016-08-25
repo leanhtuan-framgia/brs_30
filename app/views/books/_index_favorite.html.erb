@@ -1,0 +1,13 @@
+<% if @books_favorite.any? %>
+  <h1><%= t "books.h1" %></h1>
+
+  <div class="row books">
+    <%= render @books_favorite %>
+  </div>
+
+  <div class="row text-center">
+    <%= will_paginate @books_favorite %>
+  </div>
+<% else %>
+  <h1><%= t "books.no_favorite" %></h1>
+<% end %>

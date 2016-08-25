@@ -126,6 +126,8 @@ en:
     h1: "All books"
     mark: "Mark book"
     filter_book: "Filter book"
+    no_favorite: "There is no book yet"
+
 
   categories:
     title: "All Category"
@@ -163,6 +165,8 @@ en:
     rate: "Rate :"
     write_review: "Write review"
     favorite: "Favorite"
+    see_favorite: " Click to see Favorite Books List"
+
 
   review:
     title_write: "Write review"
