@@ -9,10 +9,10 @@ class Relationship < ApplicationRecord
 
   private
   def activity_create
-    activity_build_create "Follow", followed_id, follower_id
+    activity_build_create "follow", followed_id, follower_id
   end
 
   def activity_destroy
-    activity_build_create "Unfollow", followed_id, follower_id
+    activity_build_create "unfollow", followed_id, follower_id
   end
 end

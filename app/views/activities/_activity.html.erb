@@ -4,6 +4,7 @@
   <span class="content">
     <%= link_to activity.user.name, activity.user %>
     <%= activity.act_type %>
+    <%= link_to "#{target_name(activity)}", activity(activity) %>
   </span>
   <span class="timestamp">
     <%= t "user.activity" %>
