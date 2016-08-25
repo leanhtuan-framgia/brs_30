@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :show]
   before_action :find_book, only: :new
-  before_action :find_review, only: :show
+  before_action :find_review, except: [:new, :create]
 
   def new
     @review = current_user.reviews.new
@@ -17,7 +17,26 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def destroy
+    if @review.destroy
+      flash[:success] = t "flash.delete_review_success"
+      redirect_to @review.book
+    end
+  end
+
   def show
+  end
+
+  def update
+    if @review.update_attributes review_params
+      flash[:success] = t "flash.edit_review_success"
+      redirect_to @review
+    else
+      render :edit
+    end
   end
 
   private
