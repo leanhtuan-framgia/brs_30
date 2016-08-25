@@ -49,6 +49,10 @@ class User < ApplicationRecord
     Activity.user_activity user_ids
   end
 
+  def like activity_id
+    likes.find_by activity_id: activity_id
+  end
+
   private
   def downcase_email
     self.email = email.downcase
