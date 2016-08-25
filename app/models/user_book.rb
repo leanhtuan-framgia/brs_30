@@ -8,6 +8,10 @@ class UserBook < ApplicationRecord
   after_create :activity_create
   after_update :activity_create
 
+  scope :get_reading_history,
+    -> user_id{where("user_id = ? AND (read_status = ? OR read_status = ?)",
+    user_id, read_statuses[:reading], read_statuses[:reading])}
+
   private
   def activity_create
     if read_status_changed?
