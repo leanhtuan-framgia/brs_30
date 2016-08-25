@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="filter">
+    <%= form_tag books_path, method: :get do %>
+      <%= label_tag :search, nil, class: "field-label" %>
+      <%= text_field_tag :search_name, nil, class: "form-control field-text" %>
+      <%= label_tag :category, nil, class: "field-label" %>
+      <%= select_tag :category, options_for_select(@categories),
+        {include_blank: t("categories.all"), class: "form-control field-text"} %>
+      <%= submit_tag t("btn.search"), class: "btn btn-primary field-button" %>
+    <% end %>
+
+    <div class="dropdown field-filter">
+      <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        <%= t "books.filter_book" %>
+        <b class="caret"></b>
+      </button>
+      <ul class="dropdown-menu">
+        <li><%= link_to t("filter.favorite"),
+          books_path(filter_book: "quantity_favorite") %></li>
+        <li><%= link_to t("filter.rate"),
+          books_path(filter_book: "avg_rate") %></li>
+      </ul>
+    </div>
+  </div>
+</div>

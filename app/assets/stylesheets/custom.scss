@@ -236,6 +236,10 @@ span.picture {
   margin-top: 4px \9;
 }
 
+.image-book {
+  margin-top: 20px;
+}
+
 .unfavorite {
   background-color: #ccc;
   border-color: #ccc;
@@ -243,4 +247,33 @@ span.picture {
 
 .field {
   height: 200px;
+}
+
+/* filter */
+
+.filter {
+  margin-left: 10%;
+}
+
+.field-label {
+  float: left;
+  margin-left: 15px;
+}
+
+.field-text {
+  float: left;
+  width: 25%;
+  margin-left: 10px;
+}
+
+.field-button {
+  float: left;
+  width: 8%;
+  margin-left: 10px;
+}
+
+.field-filter {
+  float: left;
+  width: 8%;
+  margin-left: 10px;
 }

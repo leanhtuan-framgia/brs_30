@@ -1,8 +1,19 @@
 class BooksController < ApplicationController
-  before_action :logged_in_user, :find_book, only: :show
+  before_action :logged_in_user, only: [:index, :show]
+  before_action :load_category, only: :index
+  before_action :find_book, only: :show
 
   def index
-    @books = Book.paginate page: params[:page], per_page: Settings.size
+    @books = if params[:search_name].present?
+      Book.search_books params[:search_name]
+    elsif params[:category].present?
+      Book.search_category params[:category]
+    elsif params[:filter_book].present?
+      Book.filter_books params[:filter_book]
+    else
+      Book.all
+    end
+    @books = @books.paginate page: params[:page], per_page: Settings.size
   end
 
   def show
@@ -19,5 +30,9 @@ class BooksController < ApplicationController
       flash[:danger] = t "flash.cant_find_book"
       redirect_to books_path
     end
+  end
+
+  def load_category
+    @categories = Category.all.collect {|category| [category.name, category.id]}
   end
 end
