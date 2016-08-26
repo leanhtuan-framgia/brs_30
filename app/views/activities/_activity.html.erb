@@ -11,4 +11,16 @@
     <%= time_ago_in_words activity.created_at %>
     <%= t "activity.time" %>
   </span>
+  <span>
+    <% if activity.likes.any? %>
+      <%= activity.likes.size %>
+      <%= t "activity.like" %>
+    <% end %>
+  </span>
+
+  <% if current_user.like(activity.id) %>
+    <%= render "likes/unlike", activity: activity %>
+  <% else %>
+    <%= render "likes/like", activity: activity %>
+  <% end %>
 </li>

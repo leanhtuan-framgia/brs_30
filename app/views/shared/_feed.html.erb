@@ -1,8 +1,10 @@
-<% if @feed_items.any? %>
-  <ol class="activities">
-    <%= render @feed_items %>
-  </ol>
-  <div class="row text-center">
-    <%= will_paginate @feed_items %>
-  </div>
-<% end %>
+<div id="feed">
+  <% if @feed_items.any? %>
+    <ol class="activities">
+      <%= render @feed_items %>
+    </ol>
+    <div class="row text-center">
+      <%= will_paginate @feed_items %>
+    </div>
+  <% end %>
+</div>

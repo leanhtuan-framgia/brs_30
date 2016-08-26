@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       flash[:success] = t "flash.signup_success"
+      log_in @user
       redirect_to root_url
     else
       load_gender
