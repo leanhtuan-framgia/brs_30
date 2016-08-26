@@ -16,3 +16,12 @@
   <%= link_to t("btn.delete"), @review, method: :delete,
     data: {confirm: t("confirm.delete_review")}, class: "btn btn-primary" %>
 </div>
+<div class="row" id="list_comment">
+  <%= render "comments/comment_form" %>
+  <span id="count">
+    <%= render "comments/comment_number" %>
+  </span>
+  <div class="well" id="comment">
+    <%= render @review.comments %>
+  </div>
+</div>

@@ -4,6 +4,11 @@ en:
   activity_timeline: "Activity Timeline"
   alert_not_admin: "You don't have permission to access this page!"
 
+  helpers:
+    label:
+      comment:
+        comment_title: "Post your comment here"
+
   header:
     home: "Home"
     help: "Help"
@@ -110,8 +115,11 @@ en:
     write_review_success: "Write review successful!"
     cant_find_book_to_review: "Can't find book to review!"
     cant_find_review: "Review not found!"
+
     cant_find_activity: "Activity not found!"
     cant_find_like: "Like not found!"
+    update_comment: "Update comment"
+    delete_comment: "Delete comment"
 
 
   admin_method:
@@ -190,3 +198,9 @@ en:
     category: "Category"
     favorite: "favorite"
     rate: "rate"
+
+  comment:
+    name : "Comment"
+    post: "Post"
+    ago: "ago"
+    post_comment: "Post your comment here"

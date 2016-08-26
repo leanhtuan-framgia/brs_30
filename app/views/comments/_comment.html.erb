@@ -1,0 +1,25 @@
+<li class="list-group-item " id="comment-<%= comment.id %>">
+  <aside class="col-md-1">
+    <%= link_to gravatar_for(comment.user,
+      size: Settings.size_picture_comment), comment.user %>
+  </aside>
+  <span id ="comment_content-<%= comment.id %>">
+    <p><b><%= comment.content %></b></p>
+  </span>
+  <span>
+    <%= t "comment.post" %>
+    <%= time_ago_in_words comment.created_at %>
+    <%= t "comment.ago" %>
+  </span>
+  <% if comment.user.current_user? current_user %>
+    <%= link_to edit_review_comment_path(comment.review, comment), remote: true,
+      data: {} do %>
+      <span class="glyphicon glyphicon-pencil"></span>
+    <% end %>
+
+    <%= link_to [comment.review, comment], method: :delete, remote: true,
+      data: {confirm: t("user.admin.dialog")} do %>
+      <span class="glyphicon glyphicon-trash text-danger"></span>
+    <% end %>
+  <% end %>
+</li>

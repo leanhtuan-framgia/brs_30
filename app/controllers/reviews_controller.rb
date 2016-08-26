@@ -28,6 +28,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
+    init_comment
   end
 
   def update
@@ -58,5 +59,9 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit :title, :content, :book_id
+  end
+
+  def init_comment
+    @comment = Comment.new
   end
 end
