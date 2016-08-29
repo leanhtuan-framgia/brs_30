@@ -133,9 +133,10 @@ en:
     search_book: "Search Book"
     see_book_list: "See book list"
     manage_category: "Manage Category"
-    add_category: "Add Category"
+    add_category: "AddCategory"
     edit_category: "Edit Category"
     delete_category: "Delete Category"
+    remove_book: "Remove"
 
   books:
     title: "All book"
@@ -220,3 +221,8 @@ en:
     post: "Post"
     ago: "ago"
     post_comment: "Post your comment here"
+
+  category:
+    number_book: "books"
+    description: "Description "
+    book_list: "List Category's Book"

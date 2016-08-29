@@ -1,5 +1,5 @@
 class Admin::CategoriesController < Admin::BaseController
-  before_action :find_category, only: [:edit, :update, :destroy]
+  before_action :find_category, except: [:new, :create, :index]
 
   def index
     @categories = Category.paginate page: params[:page],
@@ -8,6 +8,13 @@ class Admin::CategoriesController < Admin::BaseController
 
   def new
     @category = Category.new
+    @category.books.build
+  end
+
+  def show
+    @books = @category.books.paginate page: params[:page],
+      per_page: Settings.size
+    @book = Book.new
   end
 
   def create
@@ -26,7 +33,7 @@ class Admin::CategoriesController < Admin::BaseController
   def update
     if @category.update_attributes category_params
       flash[:success] = t "flash.edit_category_success"
-      redirect_to admin_categories_path
+      redirect_to admin_category_path @category
     else
       render :edit
     end
@@ -52,6 +59,8 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def category_params
-    params.require(:category).permit :name, :description
+    params.require(:category).permit :id, :name, :description,
+      books_attributes: [:title, :publish_date, :author,
+      :number_of_page, :category_id, :picture]
   end
 end

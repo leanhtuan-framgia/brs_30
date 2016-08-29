@@ -1,11 +1,13 @@
-<div class="text-center">
-  <h3><%= category.name %></h3>
-  <p><%= category.description %></p>
-  <%= link_to edit_admin_category_path(category) do %>
-    <span class="glyphicon glyphicon-pencil"></span>
-  <% end %>
-  <%= link_to [:admin, category], method: :delete,
-    data: {confirm: t("confirm.delete_category")} do %>
-    <span class="glyphicon glyphicon-trash text-danger"></span>
-  <% end %>
+<div class="col-md-4 panel panel-danger category">
+  <div class="panel-heading">
+    <h3><%= link_to category.name, admin_category_path(category) %></h3>
+  </div>
+  <div class="panel-body">
+    <h4><%= category.description %></h4>
+    <span class="panel-footer pull-right">
+      <strong>
+        <%= category.books.count %><%= t "category.number_book"%>
+      </strong>
+    </span>
+  </div>
 </div>

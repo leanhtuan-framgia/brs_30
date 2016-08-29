@@ -1,6 +1,6 @@
 <% provide :title, @user.name %>
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-md-3">
     <section>
       <h1>
         <%= gravatar_for @user %>
@@ -10,14 +10,13 @@
     <section class="stats">
       <%= render "shared/stats" %>
     </section>
+    <div>
+      <%= render "follow_form" if logged_in? &&
+        !current_user.current_user?(@user) %>
+    </div>
   </aside>
 
-  <div class="col-md-8">
-    <%= render "follow_form" if logged_in? &&
-      !current_user.current_user?(@user) %>
-  </div>
-
-  <div class="col-md-8 col-xs-4">
+  <div class="col-md-9 col-xs-4">
     <div>
       <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#activity">

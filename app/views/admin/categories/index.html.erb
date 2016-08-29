@@ -1,7 +1,7 @@
 <% provide :title, t("categories.title") %>
 <h1><%= t "categories.h1" %></h1>
-<%= link_to t("admin_method.add_category"),
-  new_admin_category_path, class: "btn btn-info" %>
+<h2><%= link_to t("admin_method.add_category"),
+  new_admin_category_path, class: "glyphicon glyphicon-plus" %></h2>
 <div class="row">
   <%= render @categories %>
 </div>

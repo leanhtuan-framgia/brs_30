@@ -1,0 +1,24 @@
+<span class="field">
+  <p><strong><%= t "admin_method.add_book" %></strong></p>
+  <div class="row">
+    <%= f.fields_for :books do |ff| %>
+    <%= ff.label :title, class: "col-md-4" %>
+    <%= ff.text_field :title, class: "col-md-8" %>
+
+    <%= ff.label :author, class: "col-md-4" %>
+    <%= ff.text_field :author, class: "col-md-8" %>
+
+    <%= ff.label :publish_date, class: "col-md-4" %>
+    <%= ff.date_field :publish_date, class: "col-md-8" %>
+
+    <%= ff.label :picture_url, class: "col-md-4" %>
+    <%= ff.text_field :picture, class: "col-md-8" %>
+
+    <%= ff.label :number_of_page, class: "col-md-4" %>
+    <%= ff.text_field :number_of_page, class: "col-md-8" %>
+    <div class="pull-right">
+      <%= link_to_remove_fields t("admin_method.remove_book"), f %>
+    </div>
+    <% end %>
+  </div>
+</span>
