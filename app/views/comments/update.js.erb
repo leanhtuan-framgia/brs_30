@@ -1,0 +1,7 @@
+<% if @comment.errors.any? %>
+  $("error_comment").html(
+    "<%= j render "shared/error_messages", object: @comment %>");
+<% else %>
+  $("#comment-<%= @comment.id %>").html(
+    "<%= j render @comment %>");
+<% end %>

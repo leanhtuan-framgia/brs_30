@@ -1,0 +1,21 @@
+<div class="row span">
+  <%= form_for [@review, @comment], remote: true do |f| %>
+    <%= f.label :comment_title, class: "col-sm" %>
+    <div class="row span">
+      <div class="col-md-1">
+        <%= gravatar_for current_user, size: Settings.size_picture_commentting %>
+      </div>
+      <div class="col-md-9">
+        <%= f.text_field :content, class: "input-lg",
+          placeholder: @comment.content, id: "comment_text_field" %>
+      </div>
+      <%= f.hidden_field :review_id, value: @review.id %>
+      <div class="col-md-2">
+        <%= f.submit t("comment.name"), class: "btn-primary btn-lg" %>
+      </div>
+    </div>
+    <div class="row span" id="error_comment">
+      <%= render "shared/error_messages", object: f.object %>
+    </div>
+  <% end %>
+</div>

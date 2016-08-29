@@ -18,6 +18,10 @@ Rails.application.routes.draw do
     resources :requests, only: [:update, :edit, :index]
   end
 
+  resources :reviews do
+    resources :comments, except: [:index, :show, :new]
+  end
+
   resources :users, except: [:edit, :update, :destroy]
   resources :books, only: [:index, :show]
   resources :requests, except: [:show, :update, :edit]

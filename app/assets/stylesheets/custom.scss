@@ -69,7 +69,7 @@ p {
 
 footer {
   bottom: 0px;
-  padding-top: 5px;
+  padding-bot: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
 }
@@ -317,4 +317,8 @@ span.picture {
     display: block;
     margin-bottom: 10px;
   }
+}
+
+.comment_dialog {
+  margin-top: 30px;
 }

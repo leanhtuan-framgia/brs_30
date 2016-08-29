@@ -1,0 +1,7 @@
+<% if @comment.errors.any? %>
+  $("#error_comment").html("<%= j render "shared/error_messages", object: @comment %>");
+<% else %>
+  $("#comment").append("<%= j render @comment %>");
+  $("#count").html("<%= j render "comments/comment_number" %>");
+  $("#comment_text_field").val("");
+<% end %>
