@@ -13,6 +13,7 @@ class ReviewsController < ApplicationController
       flash[:success] = t "flash.write_review_success"
       redirect_to @review
     else
+      @book =Book.find_by id: params[:book_id]
       render :new
     end
   end

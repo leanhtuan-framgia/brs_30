@@ -2,12 +2,12 @@
 <h1><%= t "review.edit" %></h1>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-12 text-center">
     <%= form_for @review do |f| %>
       <%= render "shared/error_messages", object: @review %>
 
       <%= f.label :title %>
-      <%= f.text_field :title, class: "form-control" %>
+      <%= f.text_field :title, class: "form-control title" %>
 
       <%= f.label :content %>
       <%= f.text_area :content, class: "field" %>
@@ -16,3 +16,4 @@
     <% end %>
   </div>
 </div>
+

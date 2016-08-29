@@ -22,11 +22,15 @@ Rails.application.routes.draw do
     resources :comments, except: [:index, :show, :new]
   end
 
+  resources :books do
+    resources :reviews, only: [:new, :create]
+  end
+
   resources :users, except: [:edit, :update, :destroy]
   resources :books, only: [:index, :show]
   resources :requests, except: [:show, :update, :edit]
   resources :user_books, only: [:create, :update]
-  resources :reviews, except: :index
+  resources :reviews, except: [:index, :create, :new]
   resources :likes, only: [:create, :destroy]
   root "static_pages#home"
 

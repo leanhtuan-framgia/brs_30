@@ -179,6 +179,7 @@ en:
     write_review: "Write review"
     favorite: "Favorite"
     see_favorite: " Click to see Favorite Books List"
+    star: "star"
 
   review:
     title_write: "Write review"
@@ -186,6 +187,10 @@ en:
     edit: "Edit Review"
     write: "Write"
     ago: "ago."
+    created_at: "Created at "
+    by: "By "
+    write_review: "wrote a review about this book"
+    last_update: "Last update at "
 
   request:
     title: "Request Details:"

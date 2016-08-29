@@ -14,7 +14,7 @@
       </div>
       <br>
     </div>
-    <%= link_to t("book.write_review"), new_review_path(book_id: @book.id),
+    <%= link_to t("book.write_review"), new_book_review_path(@book),
       class: "col-md-4 col-md-offset-7 btn btn-primary" %>
     <br>
 
