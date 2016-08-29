@@ -1,9 +1,18 @@
-<span class="content">
-  <%= link_to review.title, review %>
-</span>
-<span class="timestamp">
-  <%= t "review.write" %>
-  <%= time_ago_in_words review.created_at %>
-  <%= t "review.ago" %>
-</span>
-<br>
+<article>
+  <aside class="col-md-1">
+    <%= link_to gravatar_for(review.user,
+      size: Settings.size_picture_comment), review.user %>
+  </aside>
+  <span>
+    <%= t "review.write_review" %>
+  </span>
+  <span class="content row">
+    <%= link_to review.title, review %>
+  </span>
+  <span class="timestamp col-md-offset-1">
+    <%= t "review.write" %>
+    <%= time_ago_in_words review.created_at %>
+    <%= t "review.ago" %>
+  </span>
+  <br>
+</article>

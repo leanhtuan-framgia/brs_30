@@ -3,6 +3,7 @@ class Review < ApplicationRecord
   belongs_to :book
 
   has_many :comments, dependent: :destroy
+  validates :content, :title, presence: true
 
   include CreateActivity
 

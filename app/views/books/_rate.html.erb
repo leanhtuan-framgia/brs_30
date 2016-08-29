@@ -1,0 +1,10 @@
+<ul class="row lead">
+  <% (0...@book.avg_rate).each do |i| %>
+    <span class="glyphicon glyphicon-star">
+    </span>
+  <% end %>
+  <% (@book.avg_rate...5).each do |i| %>
+    <span class="glyphicon glyphicon-star-empty"></span>
+  <% end %>
+  <strong><%= @book.avg_rate %><%= t "book.star" %></strong>
+</ul>

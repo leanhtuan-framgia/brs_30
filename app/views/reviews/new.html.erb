@@ -2,12 +2,13 @@
 <h1><%= t "review.new" %></h1>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for @review do |f| %>
-      <%= f.hidden_field :book_id, value: @book.id %>
+  <div class="col-md-12 text-center">
+    <%= form_for [@book, @review] do |f| %>
+      <%= render "shared/error_messages", object: @review %>
       <%= f.label :title %>
-      <%= f.text_field :title, class: "form-control" %>
+      <%= f.text_field :title, class: "form-control title" %>
       <%= f.label :content %>
+      <%= f.hidden_field :book_id, value: @book.id %>
       <%= f.text_area :content, class: "field" %>
       <%= f.submit t("btn.btn_submit_review"), class: "btn btn-primary" %>
     <% end %>

@@ -1,22 +1,57 @@
 <% provide :title, t("review.new") %>
-<h1><%= @review.title %></h1>
 
-<div class="row">
-  <aside class="col-md-4">
-    <section class="img-book">
+<div class="row book">
+  <span>
+    <section class="col-md-4">
       <%= link_to image_tag(@review.book.picture, alt: @review.book.title),
-        @review.book, size: Settings.picture_size, class: "img-responsive" %>
-      <b><%= @review.book.title %></b>
+        @review.book, size: Settings.picture_size,
+        class: "img-rounded center-block" %>
     </section>
-  </aside>
-  <div class="col-md-8">
-    <%= simple_format @review.content %>
+    <section class="col-md-8">
+      <h3><strong><%= @review.book.title %></strong></h3>
+      <h4>
+        <%= t "book.category" %> &nbsp
+        <b><%= @review.book.category.name %><b>
+      </h4>
+      <h4>
+        <%= t "book.author" %> &nbsp
+        <b><%= @review.book.author %></b>
+      </h4>
+      <h4>
+        <%= t "book.publish_date" %> &nbsp
+        <b><%= @review.book.publish_date %></b>
+      </h4>
+      <h4>
+        <%= t "book.number_page" %> &nbsp
+        <b><%= @review.book.number_of_page %></b>
+      </h4>
+    </section>
+  </span>
+  <div class="col-md-12">
+    <h2><%= @review.title %></h2>
+    <h5 class="pull-right">
+      <b><%= t "review.created_at" %><%= @review.created_at.to_s %></b>
+      <%= t "review.by" %>
+      <%= link_to gravatar_for(@review.user, size: Settings.size_user),
+        user_path(@review.user) %>
+      <b><%= @review.user.name %></b>
+    </h5>
+    <span class="well col-md-12">
+      <%= simple_format @review.content %>
+    </span>
   </div>
-  <%= link_to t("btn.edit"), edit_review_path, class: "btn btn-primary" %>
-  <%= link_to t("btn.delete"), @review, method: :delete,
-    data: {confirm: t("confirm.delete_review")}, class: "btn btn-primary" %>
+  <div class="col-md-12">
+    <%= t "review.last_update" %><%= @review.updated_at.to_s %>
+  </div>
+  <% if @review.user.current_user? current_user %>
+    <%= link_to t("btn.delete"), @review, method: :delete,
+      data: {confirm: t("confirm.delete_review")},
+      class: "btn btn-primary pull-right" %>
+    <%= link_to t("btn.edit"), edit_review_path,
+      class: "btn btn-primary pull-right" %>
+  <% end %>
 </div>
-<div class="row" id="list_comment">
+<div class="row comment_dialog" id="list_comment">
   <%= render "comments/comment_form" %>
   <span id="count">
     <%= render "comments/comment_number" %>
