@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160804180155) do
+ActiveRecord::Schema.define(version: 20160805175703) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "act_type"
@@ -57,6 +57,9 @@ ActiveRecord::Schema.define(version: 20160804180155) do
     t.integer  "activity_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["activity_id"], name: "index_likes_on_activity_id"
+    t.index ["user_id", "activity_id"], name: "index_likes_on_user_id_and_activity_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -64,6 +67,9 @@ ActiveRecord::Schema.define(version: 20160804180155) do
     t.integer  "followed_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
   create_table "requests", force: :cascade do |t|

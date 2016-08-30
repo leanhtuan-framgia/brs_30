@@ -16,18 +16,24 @@ class Book < ApplicationRecord
   validates :number_of_page, presence: true, numericality: true
 
   scope :search_category, ->category_id {where category_id: category_id}
-  scope :filter_books, ->filter_name {order "#{filter_name}": :desc}
-  scope :search_publish_date, ->search_name {where "title LIKE '%#{search_name}%'
-    OR publish_date LIKE ? ", search_name.to_date}
-  scope :search_string, ->search_name {where "title LIKE '%#{search_name}%'
-    OR author LIKE '%#{search_name}%' OR number_of_page LIKE '#{search_name}'"}
+  scope :sort_books, ->sort_name {order "#{sort_name}": :desc}
+  scope :search_publish_date, ->search_name {where "publish_date LIKE ? ",
+    search_name.to_date}
+  scope :search_title, ->search_name {where "title LIKE '%#{search_name}%'"}
+  scope :search_author, ->search_name {where "author LIKE '%#{search_name}%'"}
+  scope :search_number_of_page, ->number_of_page {where "number_of_page between
+    0 and #{number_of_page}"}
+
+  enum book_attribute: [:author, :number_of_page, :publish_date]
 
   class << self
-    def search_books search_name
-      begin
+    def search_books search_name, type
+      if type == "author"
+        search_author search_name
+      elsif type == "publish_date"
         search_publish_date search_name
-      rescue Exception => e
-        search_string search_name
+      elsif type == "number_of_page"
+        search_number_of_page search_name
       end
     end
   end

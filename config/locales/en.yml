@@ -137,7 +137,7 @@ en:
     title: "All book"
     h1: "All books"
     mark: "Mark book"
-    filter_book: "Filter book"
+    sort_book: "Sort book"
     no_favorite: "There is no book yet"
 
   categories:
@@ -198,11 +198,17 @@ en:
     description: "Description:"
     status: "Status"
 
-  filter:
-    title: "Title"
-    category: "Category"
+  sort:
     favorite: "favorite"
     rate: "rate"
+
+  search:
+    title: "Title"
+    category: "Category"
+    search_by: "Search by"
+    author: "Author"
+    publish_date: "Publish date"
+    number_page: "Number of page"
 
   comment:
     name : "Comment"

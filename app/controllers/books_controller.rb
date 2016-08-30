@@ -2,14 +2,17 @@ class BooksController < ApplicationController
   before_action :logged_in_user, only: [:index, :show]
   before_action :load_category, only: :index
   before_action :find_book, only: :show
+  before_action :load_search_book, only: :index
 
   def index
-    @books = if params[:search_name].present?
-      Book.search_books params[:search_name]
+    @books = if params[:search_name].present? && params[:search_book].present?
+      Book.search_books params[:search_name], params[:search_book]
     elsif params[:category].present?
       Book.search_category params[:category]
-    elsif params[:filter_book].present?
-      Book.filter_books params[:filter_book]
+    elsif params[:sort_book].present?
+      Book.sort_books params[:sort_book]
+    elsif params[:search_name].present?
+      Book.search_title params[:search_name]
     else
       Book.all
     end
@@ -36,5 +39,9 @@ class BooksController < ApplicationController
 
   def load_category
     @categories = Category.all.collect {|category| [category.name, category.id]}
+  end
+
+  def load_search_book
+    @book_attributes = Book.book_attributes
   end
 end
