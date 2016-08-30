@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :logged_in_user, only: [:index, :show]
+  before_action :logged_in_user, only: [:index]
   before_action :load_category, only: :index
   before_action :find_book, only: :show
   before_action :load_search_book, only: :index
@@ -16,14 +16,16 @@ class BooksController < ApplicationController
     else
       Book.all
     end
-    @books = @books.paginate page: params[:page], per_page: Settings.size
+    @books = @books.paginate page: params[:page], per_page: Settings.size_book
   end
 
   def show
-    @read_statuses = UserBook.read_statuses
-    @user_book = current_user.user_books.find_by book_id: @book.id
-    @user_book ||= @book.user_books.new
-    @checked_status = @user_book.read_status
+    if logged_in?
+      @read_statuses = UserBook.read_statuses
+      @user_book = current_user.user_books.find_by book_id: @book.id
+      @user_book ||= @book.user_books.new
+      @checked_status = @user_book.read_status
+    end
     @reviews = @book.reviews.paginate page: params[:page],
       per_page: Settings.size
   end

@@ -23,7 +23,7 @@ en:
     contact: "Contact"
 
   center_jumbotron:
-    signup: "Sign up now!"
+    signup: "Sign up"
     welcome: "Welcome to the BookRerview App"
 
   signup:
@@ -139,6 +139,7 @@ en:
     mark: "Mark book"
     sort_book: "Sort book"
     no_favorite: "There is no book yet"
+    latest_books: "Latest books"
 
   categories:
     title: "All Category"

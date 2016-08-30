@@ -2,9 +2,11 @@
   <%= form_for [@review, @comment], remote: true do |f| %>
     <%= f.label :comment_title, class: "col-sm" %>
     <div class="row span">
-      <div class="col-md-1">
-        <%= gravatar_for current_user, size: Settings.size_picture_commentting %>
-      </div>
+      <% if logged_in? %>
+        <div class="col-md-1">
+          <%= gravatar_for current_user, size: Settings.size_picture_commentting %>
+        </div>
+      <% end %>
       <div class="col-md-9">
         <%= f.text_field :content, class: "input-lg",
           placeholder: @comment.content, id: "comment_text_field" %>

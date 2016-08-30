@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :logged_in_user, except: [:index, :new, :show]
   before_action :find_comment, only: [:edit, :update, :destroy]
 
   def create
