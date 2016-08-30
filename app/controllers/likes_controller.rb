@@ -32,7 +32,6 @@ class LikesController < ApplicationController
   def find_like
     @like = current_user.likes.find_by activity_id: params[:id]
     if @like.nil?
-      flash[:danger] = "flash.cant_find_like"
       redirect_to root_path
     end
   end

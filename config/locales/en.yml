@@ -63,6 +63,9 @@ en:
     new_request: "New request"
     btn_cancel_request: "Cancel"
     reading_history: "Reading History"
+    edit: "Edit"
+    update_your_profile: "Update your profile"
+    update_success: "Profile updated"
 
   message:
     error: "The form contains"
@@ -80,6 +83,7 @@ en:
     unfavorite: "Unfavorite"
     btn_submit_review: "Submit review"
     search: "Search"
+    save_change: "Save changes"
 
   flash:
     signup_success: "Successful!"

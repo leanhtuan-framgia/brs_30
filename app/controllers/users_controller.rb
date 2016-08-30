@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :show]
-  before_action :load_gender, only: :new
-  before_action :find_user, only: :show
+  before_action :load_gender, only: [:new, :edit]
+  before_action :find_user, only: [:show, :edit, :update]
 
   def new
     @user = User.new
@@ -33,6 +33,18 @@ class UsersController < ApplicationController
       current_user.active_relationships.find_by followed_id: @user.id
     else
       current_user.active_relationships.build
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update_attributes user_params
+      flash[:success] = t "user.update_success"
+      redirect_to @user
+    else
+      render :edit
     end
   end
 
