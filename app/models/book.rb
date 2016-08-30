@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
-  belongs_to :category
+  belongs_to :category, inverse_of: :books
 
   has_many :user_books, dependent: :destroy
   has_many :reviews

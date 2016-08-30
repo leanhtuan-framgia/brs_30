@@ -1,0 +1,17 @@
+<p class="fields">
+  <%= f.label :title, class: "col-md-4" %>
+  <%= f.text_field :title, class: "col-md-8" %>
+
+  <%= f.label :author, class: "col-md-4" %>
+  <%= f.text_field :author, class: "col-md-8" %>
+
+  <%= f.label :publish_date, class: "col-md-4" %>
+  <%= f.date_field :publish_date, class: "col-md-8" %>
+
+  <%= f.label :picture_url, class: "col-md-4" %>
+  <%= f.text_field :picture, class: "col-md-8" %>
+
+  <%= f.label :number_of_page, class: "col-md-4" %>
+  <%= f.text_field :number_of_page, class: "col-md-8" %>
+  <%= link_to_remove_fields t("admin_method.remove_book"), f %>
+</p>

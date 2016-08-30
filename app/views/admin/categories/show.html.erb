@@ -1,0 +1,27 @@
+<% provide :title, @category.name %>
+<h1><%= @category.name %></h1>
+<span class="col-md-6">
+  <div class="text-center"><h3><%= t "category.description" %></h3></div>
+  <div class="well text-center field2">
+    <%= simple_format @category.description %>
+  </div>
+  <%= link_to t("admin_method.edit_category"),
+    edit_admin_category_path(@category),
+    class: "btn btn-md btn-primary col-md-6" %>
+
+  <%= link_to t("admin_method.delete_category"),
+    [:admin, @category], method: :delete,
+    data: {confirm: t("confirm.delete_category")},
+    class: "btn btn-md btn-primary col-md-6" %>
+</span>
+<span class="row text-center">
+  <h3><%= t "admin_method.add_book" %></h3>
+  <%= render "book_form" %>
+</span>
+<div class="row">
+  <h2><%= t "category.book_list" %></h2>
+  <%= render @books %>
+</div>
+<div class="text-center">
+  <%= will_paginate @books %>
+</div>
