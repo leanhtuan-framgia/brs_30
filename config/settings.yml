@@ -4,6 +4,9 @@ size_user: 15
 size_gravatar: 50
 size_picture_comment: 40
 size_picture_commentting: 60
+size_book: 6
+limit_book: 4
+limit_review: 10
 relation:
   following: "following"
   followers: "followers"

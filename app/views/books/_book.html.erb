@@ -1,16 +1,28 @@
-<div class="book">
-  <div class="col-xs-6 col-md-4 abook">
+<div class="book text-center">
+  <div class="col-xs-6 col-md-5 abook">
     <div class="row thumbnail abox">
       <div class="col-md-6 img-responsive">
         <%= link_to image_tag(book.picture, alt: book.title), book,
           size: Settings.picture_size, class: "img-responsive image-book" %>
       </div>
-      <div class="col-md-6 text-center">
+      <div class="col-md-6">
         <p><b><%= link_to book.title, book %></b></p>
-        <p><%= book.category.name %></p>
-        <p><%= book.author %></p>
-        <p><%= book.publish_date %></p>
-        <p><%= book.number_of_page %></p>
+        <p>
+          <%= t "book.category" %>
+          <%= book.category.name %>
+        </p>
+        <p>
+          <%= t "book.author" %>
+          <%= book.author %>
+        </p>
+        <p>
+          <%= t "book.publish_date" %>
+          <%= book.publish_date %>
+        </p>
+        <p>
+          <%= t "book.number_page" %>
+          <%= book.number_of_page %>
+        </p>
         <p>
           <%= t "book.rate" %>
           <%= book.avg_rate %>
