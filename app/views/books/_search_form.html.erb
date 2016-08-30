@@ -3,6 +3,9 @@
     <%= form_tag books_path, method: :get do %>
       <%= label_tag :search, nil, class: "field-label" %>
       <%= text_field_tag :search_name, nil, class: "form-control field-text" %>
+       <%= select_tag :search_book, options_for_select(@book_attributes.map{|key, value|
+        [key, key]}), {include_blank: t("categories.all"),
+        class: "form-control field-text"} %>
       <%= label_tag :category, nil, class: "field-label" %>
       <%= select_tag :category, options_for_select(@categories),
         {include_blank: t("categories.all"), class: "form-control field-text"} %>
@@ -11,14 +14,14 @@
 
     <div class="dropdown field-filter">
       <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-        <%= t "books.filter_book" %>
+        <%= t "books.sort_book" %>
         <b class="caret"></b>
       </button>
       <ul class="dropdown-menu">
-        <li><%= link_to t("filter.favorite"),
-          books_path(filter_book: "quantity_favorite") %></li>
-        <li><%= link_to t("filter.rate"),
-          books_path(filter_book: "avg_rate") %></li>
+        <li><%= link_to t("sort.favorite"),
+          books_path(sort_book: "quantity_favorite") %></li>
+        <li><%= link_to t("sort.rate"),
+          books_path(sort_book: "avg_rate") %></li>
       </ul>
     </div>
   </div>

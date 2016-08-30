@@ -39,7 +39,7 @@ end
   picture = "http://bookbuy.vn/Res/Images/Product/1001-cach-lam-giau_31813_1.png"
   publish_date = "10/12/2010"
   author = "Quoc Khanh - Thu Minh"
-  number_of_page = 150
+  number_of_page = 170
   category_id = 2
   avg_rate = 5
   Book.create! title: title, picture: picture, publish_date: publish_date,
